@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+}
+
+.navBar {
+  padding: 0.5em;
+  display: flex;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  background-color: rgba(91, 155, 234);
+}
+
+.home {
+  text-decoration: none;
+  color: red;
+}
