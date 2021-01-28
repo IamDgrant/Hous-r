@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
-import './LoginForm.css';
+import "./LoginForm.css";
 
 function LoginFormPage() {
   const dispatch = useDispatch();
@@ -16,10 +16,11 @@ function LoginFormPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
-    return dispatch(sessionActions.login({ credential, password }))
-      .catch((res) => {
+    return dispatch(sessionActions.login({ credential, password })).catch(
+      (res) => {
         if (res.data && res.data.errors) setErrors(res.data.errors);
-      });
+      }
+    );
   };
 
   return (
