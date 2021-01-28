@@ -7,7 +7,7 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     // create filler users
     const fillerUsers = [];
-    const numFillerUsers = 20; // edit this to edit the number of users created
+    const numFillerUsers = 30; // edit this to edit the number of users created
 
     for (let i = 0; i < numFillerUsers; i++) {
       let userName = faker.internet.userName();
@@ -19,8 +19,8 @@ module.exports = {
       const hashedPassword = await bcrypt.hash(userName + "234", 10);
 
       fillerUsers.push({
-        username: userName,
         email: email,
+        username: userName,
         hashedPassword: hashedPassword,
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -44,29 +44,29 @@ module.exports = {
       "Users",
       [
         {
-          username: "Newbie",
           email: "new-housr@gmail.com",
+          username: "Newbie",
           hashedPassword: hashedPassword2,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          username: "DemoUser",
           email: "demo@demo.com",
+          username: "DemoUser",
           hashedPassword: hashedPasswordDemo,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          username: "PatrickStar",
           email: "patrick@gmail.com",
+          username: "PatrickStar",
           hashedPassword: hashedPassword1,
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          username: "optimus",
           email: "optimus@protonmail.com",
+          username: "optimus",
           hashedPassword: hashedPassword3,
           createdAt: new Date(),
           updatedAt: new Date(),
@@ -77,7 +77,14 @@ module.exports = {
     );
   },
 
-  down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete("Users", null, {});
+  down: async (queryInterface, Sequelize) => {
+    const Op = Sequelize.Op;
+    return queryInterface.bulkDelete(
+      "Users",
+      {
+        username: { [Op.in]: ["Demo-lition", "FakeUser1", "FakeUser2"] },
+      },
+      {}
+    );
   },
 };
