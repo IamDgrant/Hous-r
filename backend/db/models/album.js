@@ -1,17 +1,30 @@
-'use strict';
+"use strict";
 module.exports = (sequelize, DataTypes) => {
-  const Album = sequelize.define('Album', {
-    albumName: DataTypes.STRING(30),
-    numberOfPhotos: DataTypes.INTEGER,
-    numberOfViews: DataTypes.INTEGER,
-    albumCreatedBy: DataTypes.INTEGER
-  }, {});
-  Album.associate = function(models) {
-    const columnMapping = {
-      through: "Photo_Album",
-      otherKey: "photoId",
-      foreignKey: "",
-    }
+  const Album = sequelize.define(
+    "Album",
+    {
+      albumName: {
+        type: DataTypes.STRING(30),
+        allowNull: false,
+      },
+      numberOfPhotos: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      numberOfViews: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+      albumCreatedBy: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+      },
+    },
+    {}
+  );
+  Album.associate = function (models) {
+    Album.hasOne(models.User, { foreignKey: "albumCreatedBy" });
+    Album.hasMany(models.Photo, { foreignKey: "albumId" });
   };
   return Album;
 };
