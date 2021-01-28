@@ -1,7 +1,7 @@
 "use strict";
 module.exports = (sequelize, DataTypes) => {
-  const Photo_Tags = sequelize.define(
-    "Photo_Tags",
+  const Photo_Tag = sequelize.define(
+    "Photo_Tag",
     {
       photoId: {
         type: DataTypes.INTEGER,
@@ -14,9 +14,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     {}
   );
-  Photo_Tags.associate = function (models) {
-    Photo_Tags.belongsToMany(models.Tag, { through: Photo_Tags });
-    Photo_Tags.belongsToMany(models.Photo, { through: Photo_Tags });
+  Photo_Tag.associate = function (models) {
+    Photo_Tag.belongsToMany(models.Tag, { through: Photo_Tags });
+    Photo_Tag.belongsToMany(models.Photo, { through: Photo_Tags });
   };
   return Photo_Tags;
 };
