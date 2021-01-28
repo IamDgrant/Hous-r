@@ -14,9 +14,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     {}
   );
-  Photo_Tag.associate = function (models) {
-    Photo_Tag.belongsTo(models.Tag, { through: Photo_Tag });
-    Photo_Tag.belongsTo(models.Photo, { through: Photo_Tag });
-  };
+  Photo_Tag.associate = function (models) {};
   return Photo_Tag;
 };

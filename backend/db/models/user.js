@@ -53,7 +53,6 @@ module.exports = (sequelize, DataTypes) => {
     User.hasMany(models.Album, { foreignKey: "albumCreatedBy" });
     User.hasMany(models.Photo, { foreignKey: "addedbyId" });
     User.hasMany(models.Comment, { foreignKey: "commentById" });
-
   };
   User.prototype.toSafeObject = function () {
     // remember, this cannot be an arrow function
