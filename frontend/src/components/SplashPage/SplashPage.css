@@ -1,0 +1,15 @@
+/* .splash-container {
+  display: flex;
+  justify-content: center;
+} */
+
+.splash-container-h1 {
+  font-family: "Alegreya Sans", sans-serif;
+  font-weight: 700;
+  align-items: center;
+}
+
+.splash-container-p {
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+}
