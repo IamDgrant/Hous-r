@@ -1,0 +1,33 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  text-decoration: none;
+  font-family: proxima-nova, sans-serif;
+  font-style: normal;
+  font-weight: 200;
+  background-color: #20202299;
+  padding: 25px 0px 25px 0px;
+  border-bottom: 200px;
+  border-bottom-color: white;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-decoration: none;
+  font-family: proxima-nova, sans-serif;
+  font-style: normal;
+  font-weight: 200;
+  background-color: #20202299;
+  padding: 25px 0px 25px 0px;
+}
+
+.fa {
+  padding: 0px 5px 0px 5px;
+}
+
+.dev {
+  align-self: flex-end;
+}

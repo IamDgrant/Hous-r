@@ -15,21 +15,41 @@ function Navigation({ isLoaded }) {
     sessionLinks = (
       <>
         <LoginFormModal />
-        <NavLink to="/signup">Sign Up</NavLink>
+        <NavLink
+          to="/signup"
+          className="main-nav"
+          activeClassName="main-nav-active"
+        >
+          Sign Up
+        </NavLink>
       </>
     );
   }
 
   return (
-    <div className="navWrapper">
-      <div className="navBar">
-        <div className="home">
-          <NavLink exact to="/">
-            hous'r
-          </NavLink>
-          {isLoaded && sessionLinks}
-        </div>
+    <div className="navBar">
+      <div>
+        <NavLink exact to="/" className="main-nav">
+          <img
+            src="https://housr-home-images.s3.amazonaws.com/hones/favpng_vector-graphics-house-symbol-building.png"
+            alt="house logo"
+          ></img>{" "}
+          hous'r
+        </NavLink>
       </div>
+      <div className="search">
+        {/* <div> */}
+          <input
+            type="text"
+            className="searchTerm"
+            placeholder="What house are you looking for?"
+          />
+          <button type="submit" class="searchButton">
+            <i className="fa fa-search"></i>
+          </button>
+        {/* </div> */}
+      </div>
+      <div>{isLoaded && sessionLinks}</div>
     </div>
   );
 }

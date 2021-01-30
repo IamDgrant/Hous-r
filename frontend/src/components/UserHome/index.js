@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { oneUserData } from "../../store/usersReducer";
 import "./UserHome.css";
@@ -22,11 +22,11 @@ const UserHomePage = ({ sessionUser }) => {
               Welcome {user.username}
             </NavLink>
           ))} */}
-          <h1>Welcome, {sessionUser.username}!</h1>
+          <h1>Welcome, {sessionUser.username} | Joined {year}</h1>
         </div>
-        <div>
-          <h1>Joined {year}</h1>
-        </div>
+        {/* <div>
+          <h1>| Joined {year}</h1>
+        </div> */}
       </div>
       <div className="userHome-Nav-menu">
         <div>
@@ -36,7 +36,7 @@ const UserHomePage = ({ sessionUser }) => {
         </div>
         <div>
           <NavLink to={`/homestream/${sessionUser.id}}`} className="active">
-            Homestream
+            Home'stream
           </NavLink>
         </div>
         <div>
