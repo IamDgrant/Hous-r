@@ -19,8 +19,8 @@ module.exports = (sequelize, DataTypes) => {
     {}
   );
   Comment.associate = function (models) {
-    Comment.hasOne(models.User, { foreignKey: "commentById" });
-    Comment.hasOne(models.Photo, { foreignKey: "photoId" });
+    Comment.belongsTo(models.User, { foreignKey: "commentById" });
+    Comment.belongsTo(models.Photo, { foreignKey: "photoId" });
   };
   return Comment;
 };

@@ -1,43 +1,57 @@
-import React, { useState } from "react";
-// import * as sessionActions from "../../store/session";
-import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom";
+import { oneUserData } from "../../store/usersReducer";
 import "./UserHome.css";
 
-function UserHomePage() {
-  // const dispatch = useDispatch();
-  const sessionUser = useSelector((state) => state.session.user);
-  // const [credential, setCredential] = useState("");
-  // const [password, setPassword] = useState("");
-  // const [errors, setErrors] = useState([]);
+const UserHomePage = ({ sessionUser }) => {
+  const year = sessionUser.createdAt.slice(0, 4);
 
-  if (sessionUser) return <Redirect to="/" />;
+  const dispatch = useDispatch();
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   setErrors([]);
-  //   return dispatch(sessionActions.login({ credential, password })).catch(
-  //     (res) => {
-  //       if (res.data && res.data.errors) setErrors(res.data.errors);
-  //     }
-  //   );
-  // };
+  useEffect(() => {
+    dispatch(oneUserData(sessionUser.id));
+  }, [dispatch, sessionUser]);
 
   return (
     <>
-      <div id="content">
-        <div className="splash-container-h1">
-          <h1>Find photos of amazing homes.</h1>
+      <div id="userHome_flex-container">
+        <div>
+          {/* {userName.map((user) => (
+            <NavLink key={user.id} id={user.id} to={`/user/${user.id}`}>
+              Welcome {user.username}
+            </NavLink>
+          ))} */}
+          <h1>Welcome, {sessionUser.username}!</h1>
         </div>
-        <div className="splash-container-p">
-          <p>
-            Join the Hous'r community, "home" to millions of photos of the
-            worlds amazing homes.
-          </p>
+        <div>
+          <h1>Joined {year}</h1>
+        </div>
+      </div>
+      <div className="userHome-Nav-menu">
+        <div>
+          <NavLink to={`/about/${sessionUser.id}}`} className="active">
+            About
+          </NavLink>
+        </div>
+        <div>
+          <NavLink to={`/homestream/${sessionUser.id}}`} className="active">
+            Homestream
+          </NavLink>
+        </div>
+        <div>
+          <NavLink to={`/albums/${sessionUser.id}}`} className="active">
+            Albums
+          </NavLink>
+        </div>
+        <div>
+          <NavLink to={`/favorites/${sessionUser.id}}`} className="active">
+            Favorites
+          </NavLink>
         </div>
       </div>
     </>
   );
-}
+};
 
 export default UserHomePage;

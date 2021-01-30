@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#userHome_flex-container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 130px;
+  background-image: url(https://housr-home-images.s3.amazonaws.com/hones/Miami_house.png);
+  padding: 0 1.5rem 0 1.5rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.4rem;
+  color: rgba(255, 255, 255, 0.884);
+}
+
+.userHome-Nav-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  font-size: 0.75rem;
+}
+
+.active {
+  text-decoration: none;
+  margin: 5px 0 5px 0;
+  padding: 0 15px 0 15px;
+}

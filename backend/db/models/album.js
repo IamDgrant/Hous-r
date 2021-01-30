@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
     {}
   );
   Album.associate = function (models) {
-    Album.hasOne(models.User, { foreignKey: "albumCreatedBy" });
+    Album.belongsTo(models.User, { foreignKey: "albumCreatedBy" });
     Album.hasMany(models.Photo, { foreignKey: "albumId" });
   };
   return Album;
