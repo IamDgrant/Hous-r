@@ -3,7 +3,7 @@ img {
   width: 15px;
 }
 
-.navBar {
+.navbar {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
@@ -11,7 +11,7 @@ img {
   background-color: rgba(32, 32, 34, 0.6);
 }
 
-.main-nav {
+.navbar-item {
   text-decoration: none;
   font-family: proxima-nova, sans-serif;
   font-style: normal;
@@ -47,7 +47,7 @@ img {
   color: #394243;
 }
 
-.searchbtn {
+.searchButton {
   width: 40px;
   height: 31px;
   border: 1px solid #394243;
@@ -65,23 +65,6 @@ img {
   font-style: normal;
   font-weight: 400;
 }
-
-/* .btn {
-  -webkit-border-radius: 28;
-  -moz-border-radius: 28;
-  border-radius: 20px;
-  font-family: proxima-nova, sans-serif;
-  color: #ffffff;
-  font-size: 13px;
-  background: #394243;
-  padding: 5px 10px 5px 10px;
-  text-decoration: none;
-}
-
-.btn:hover {
-  background: #5b6e7a;
-  text-decoration: none;
-} */
 
 .btn {
   border-top: 1px solid #394243;

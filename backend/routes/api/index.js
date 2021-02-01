@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
+const photoRouter = require("./photo.js")
 
 // GET /api/set-token-cookie
 const asyncHandler = require('express-async-handler');
@@ -34,6 +35,8 @@ router.get('/restore-user', restoreUser, (req, res) => {
 //     return res.json(req.user);
 //   }
 // );
+
+router.use("/photo", photoRouter)
 
 router.post('/test', function (req, res) {
   res.json({ requestBody: req.body });

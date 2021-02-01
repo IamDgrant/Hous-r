@@ -7,6 +7,8 @@ import UserHomePage from "./components/UserHome";
 import UserHomeStream from "./components/UserHomeStream";
 import UserAlbums from "./components/UserAlbums";
 import Footer from "./components/Footer";
+import AddPhoto from "./components/AddPhotoPage";
+
 // import LoginFormPage from "./components/LoginFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
@@ -24,26 +26,29 @@ function App() {
     <>
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
+        <>
         <Switch>
           {/* <Route path="/login" >
             <LoginFormPage />
           </Route> */}
-          <Route path="/signup">
+          {/* <Route path="/signup">
             <SignupFormPage />
-          </Route>
+          </Route> */}
           <Route path="/" exact>
-            <SplashPage />
+            <SplashPage sessionUser={sessionUser}/>
           </Route>
-          <Route path="/home" exact>
-            <UserHomePage sessionUser={sessionUser} />
-          </Route>
+          {/* <Route path="/addphoto">
+            <AddPhoto />
+          </Route> */}
           <Route path="/homestream" exact>
             <UserHomeStream sessionUser={sessionUser} />
           </Route>
-          <Route path="/albums" exact>
+          {/* <Route path="/albums" exact>
             <UserAlbums sessionUser={sessionUser} />
-          </Route>
+          </Route> */}
         </Switch>
+      <UserHomePage sessionUser={sessionUser} />
+      </>
       )}
       <Footer isLoaded={isLoaded} />
     </>

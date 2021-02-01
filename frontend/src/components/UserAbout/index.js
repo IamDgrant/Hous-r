@@ -15,7 +15,7 @@ const UserAboutPage = ({ sessionUser }) => {
     <>
       <div id="userAbout_flex-container">
         <div>
-          <form></form>
+          <h1>About Me</h1>
         </div>
       </div>
     </>

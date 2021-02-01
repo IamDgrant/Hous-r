@@ -9,15 +9,15 @@ module.exports = (sequelize, DataTypes) => {
       },
       imgUrl: {
         type: DataTypes.STRING,
-        allowNull: false,
+        // allowNull: false,
       },
       location: {
         type: DataTypes.TEXT,
-        allowNull: false,
+        // allowNull: false,
       },
       description: {
         type: DataTypes.TEXT,
-        allowNull: false,
+        // allowNull: false,
       },
       adderId: {
         type: DataTypes.INTEGER,

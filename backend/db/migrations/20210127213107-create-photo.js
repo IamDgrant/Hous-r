@@ -13,16 +13,16 @@ module.exports = {
         type: Sequelize.STRING(50),
       },
       imgUrl: {
-        allowNull: false,
+        // allowNull: false,
         type: Sequelize.STRING,
         unique: true,
       },
       location: {
-        allowNull: false,
+        // allowNull: false,
         type: Sequelize.TEXT,
       },
       description: {
-        allowNull: false,
+        // allowNull: false,
         type: Sequelize.TEXT,
       },
       adderId: {

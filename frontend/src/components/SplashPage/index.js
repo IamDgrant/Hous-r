@@ -4,9 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import "./SplashPage.css";
 
-function SplashPage() {
-  // const dispatch = useDispatch();
-  const sessionUser = useSelector((state) => state.session.user);
+function SplashPage({ sessionUser }) {
+  // const sessionUser = useSelector((state) => state.session.user);
   // const [credential, setCredential] = useState("");
   // const [password, setPassword] = useState("");
   // const [errors, setErrors] = useState([]);
