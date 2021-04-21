@@ -8,6 +8,10 @@ const setUser = (user) => ({
   payload: user,
 });
 
+const removeUser = () => ({
+  type: REMOVE_USER,
+});
+
 export const createUser = (user) => async (dispatch) => {
   const { images, image, username, email, password } = user;
   const formData = new FormData();
@@ -32,10 +36,6 @@ export const createUser = (user) => async (dispatch) => {
 
   dispatch(setUser(res.data.user));
 };
-
-const removeUser = () => ({
-  type: REMOVE_USER,
-});
 
 export const login = ({ credential, password }) => async (dispatch) => {
   const res = await fetch("/api/session", {

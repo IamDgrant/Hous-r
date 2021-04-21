@@ -7,6 +7,7 @@ export const getAllPhotos = (users) => ({
   type: GET_ALL_PHOTOS,
   users,
 });
+
 export const getOnePhoto = (users) => ({
   type: GET_ONE_PHOTO,
   users,

@@ -64,7 +64,7 @@ function SignupFormPage() {
               <div>
                 <input
                   className="input is-primary is-small"
-                  type="password"
+                  type="text"
                   // style={{ width: "25%" }}
                   placeholder="Enter Username"
                   value={username}
